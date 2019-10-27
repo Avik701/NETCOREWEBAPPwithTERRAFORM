@@ -9,14 +9,14 @@ provider "azurerm" {
     client_secret="${var.client_secret}"
     tenant_id="${var.tenant_id}"  
 }
-terraform{
+/*terraform{
     backend "azurerm" {
      storage_account_name = "_tfstorageaccount_"
      container_name = "terraform"
      key = "terraform.tfstate"
      access_key = "_storagekey_"
     }
-}
+}*/
 resource "azurerm_resource_group" "dev" {
     name="avikdemowebapptf"
     location = "West Europe" 
