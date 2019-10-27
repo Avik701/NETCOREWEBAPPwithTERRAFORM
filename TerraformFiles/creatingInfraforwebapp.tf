@@ -9,20 +9,13 @@ provider "azurerm" {
     client_secret="${var.client_secret}"
     tenant_id="${var.tenant_id}"  
 }
-/*terraform{
-    backend "azurerm" {
-     storage_account_name = "_tfstorageaccount_"
-     container_name = "terraform"
-     key = "terraform.tfstate"
-     access_key = "_storagekey_"
-    }
-}*/
+
 resource "azurerm_resource_group" "dev" {
     name="avikdemowebapptf"
     location = "West Europe" 
 }
 resource "azurerm_app_service_plan" "dev" {
-  name                = "__appserviceplan__"
+  name                = "appsrvcplan76a3800275"
   location            = "${azurerm_resource_group.dev.location}"
   resource_group_name = "${azurerm_resource_group.dev.name}"
 
@@ -32,7 +25,7 @@ resource "azurerm_app_service_plan" "dev" {
   }
 }
 resource "azurerm_app_service" "dev" {
-  name                = "__appservicename__"
+  name                = "appsrvctf76a3800275"
   location            = "${azurerm_resource_group.dev.location}"
   resource_group_name = "${azurerm_resource_group.dev.name}"
   app_service_plan_id = "${azurerm_app_service_plan.dev.id}"
