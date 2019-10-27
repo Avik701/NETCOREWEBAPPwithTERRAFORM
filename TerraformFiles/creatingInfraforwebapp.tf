@@ -1,5 +1,7 @@
 
 provider "azurerm" { }
+
+
 resource "azurerm_resource_group" "dev" {
     name="avikdemowebapptf"
     location = "West Europe" 
